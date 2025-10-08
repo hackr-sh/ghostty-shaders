@@ -3,7 +3,7 @@
 Clone the repository:
 
 ```sh
-git clone https://github.com/hackr-sh/ghostty-shaders
+git clone --depth 1 https://github.com/hackr-sh/ghostty-shaders
 cd ghostty-shaders
 ```
 
