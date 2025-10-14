@@ -250,7 +250,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     vec2 uv = fragCoord.xy / iResolution.xy;
 
-    float time = iTime * SPEED;
+    float time = mod(iTime, 300) * SPEED; //reset time every 5 minutes, as large values lead to the same (and eventually no) rune(s)
 
     const float turn_rad = 0.25 / BLOCKS_BEFORE_TURN;   //0 .. 0.5
     const float turn_abs_time = (PI/2.*turn_rad) * 1.5;  //multiplier different than 1 means a slow down on turns
