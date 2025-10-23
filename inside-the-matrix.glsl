@@ -182,7 +182,7 @@ vec3 rain(vec3 ro3, vec3 rd3, float time) {
                         float q = fract(v * chars_count);
                         vec2 char_hash = hash2(vec2(c+char_z_shift, cell_hash2.x));
                         if (char_hash.x >= 0.1 || c == 0.) {  //10% of missed symbols
-                            float time_factor = floor(c == 0. ? time*5.0 :  //first symbol is changed fast
+                            float time_factor = floor(c == 0. ? time :  //first symbol is changed fast
                                     time*(1.0*cell_hash2.z +   //strips are changed sometime with different speed
                                             cell_hash2.w*cell_hash2.w*4.*pow(char_hash.y, 4.)));  //some symbols in some strips are changed relatively often
                             float a = random_char(vec2(char_hash.x, time_factor), vec2(u,q), max(1., 3. - c/2.)*0.2);  //alpha
