@@ -393,8 +393,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     ro.xy += level1_size * p;
 
-    ro += rd * 0.2;
     rd = normalize(rd);
+    ro += rd * 0.2;
 
     // vec3 col = rain(ro, rd, time);
     vec3 col = rain(ro, rd, time) * 0.25;
